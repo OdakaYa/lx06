@@ -54,7 +54,7 @@ object G2 {
 
   def output(g: G1.Graph): Unit = G1.output(g)
 
-  def output_adjacency(g: G1.Graph): Unit = {
+  def output_matrix(g: G1.Graph): Unit = {
     val n = g.length
     for (i <- Range(0, n)) {
       print(s"$i ")
@@ -88,7 +88,7 @@ object Main2 extends App {
 
   val g = load("data/graph2.csv")
   output(g)
-  output_adjacency(g)
+  output_matrix(g)
 }
 
 object G3 {
@@ -99,7 +99,7 @@ object G3 {
   def load(path: String): G2.Graph = G2.load(path)
   def output(g: G2.Graph): Unit = G2.output(g)
   def is_connected(g: G2.Graph, i: Int, j: Int): Boolean = G2.is_connected(g, i, j)
-  def output_adjacency(g: G2.Graph): Unit = G2.output_adjacency(g)
+  def output_matrix(g: G2.Graph): Unit = G2.output_matrix(g)
 
   type Vertices = Seq[Vertex]
 
@@ -123,7 +123,7 @@ object Main3 extends App {
 
   val g = load("data/graph3.csv")
   output(g)
-  output_adjacency(g)
+  output_matrix(g)
 
   for (s <- List(Seq(), Seq(0),
        Seq(0, 1, 2, 3, 4, 5, 6, 7),
